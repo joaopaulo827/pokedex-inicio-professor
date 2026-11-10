@@ -1,0 +1,307 @@
+:root {
+  --cor-fundo: #F4F5EF;
+  --cor-superficie: #FFFFFF;
+  --cor-texto: #13202D;
+  --cor-texto-suave: #5B6670;
+  --cor-principal: #E07A2E;
+  --cor-principal-escura: #B85F1E;
+  --cor-perigo: #C62828;
+  --cor-ok: #2E7D32;
+  --cor-alerta: #8A6D00;
+  --cor-alerta-fundo: #FFF6D6;
+  --cor-borda: #D9DCD3;
+  --raio: 8px;
+  --espaco: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+.topo {
+  background: var(--cor-texto);
+  color: var(--cor-superficie);
+  padding: var(--espaco);
+  text-align: center;
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.topo p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.conteudo {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--espaco);
+}
+
+/* ===== busca ===== */
+.formulario {
+  background: var(--cor-superficie);
+  padding: var(--espaco);
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-borda);
+}
+
+.formulario label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.linha-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  font: inherit;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  min-width: 0;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: var(--raio);
+  background: var(--cor-principal);
+  color: var(--cor-superficie);
+  font-weight: bold;
+}
+
+button:hover {
+  background: var(--cor-principal-escura);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.botao-secundario {
+  background: transparent;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+}
+
+.botao-secundario:hover {
+  background: var(--cor-borda);
+}
+
+/* ===== mensagens ===== */
+#mensagem {
+  min-height: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.erro {
+  color: var(--cor-perigo);
+  font-weight: bold;
+}
+
+.ok {
+  color: var(--cor-ok);
+  font-weight: bold;
+}
+
+.alerta {
+  color: var(--cor-alerta);
+  background: var(--cor-alerta-fundo);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--raio);
+}
+
+/* ===== card ===== */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco);
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background: var(--cor-fundo);
+  border-radius: 50%;
+}
+
+.card-info {
+  width: 100%;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+
+.numero {
+  margin: 0;
+  color: var(--cor-texto-suave);
+  font-family: Consolas, monospace;
+}
+
+.tipos {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.tipo {
+  background: var(--cor-texto);
+  color: var(--cor-superficie);
+  padding: 0.15rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* 2.4: barras de status */
+.status {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--espaco);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.status li {
+  display: grid;
+  grid-template-columns: 7.5rem 2.5rem 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.barra {
+  height: 0.6rem;
+  background: var(--cor-fundo);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra span {
+  display: block;
+  height: 100%;
+  background: var(--cor-principal);
+}
+
+/* ===== lista e paginação ===== */
+.grade {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.grade button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  font-weight: normal;
+  text-transform: capitalize;
+  padding: 0.5rem;
+}
+
+.grade button:hover {
+  border-color: var(--cor-principal);
+  background: var(--cor-superficie);
+}
+
+.grade img {
+  width: 72px;
+  height: 72px;
+}
+
+.paginacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.paginacao p {
+  margin: 0;
+  color: var(--cor-texto-suave);
+}
+
+/* 4.1: favoritos */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips button {
+  padding: 0.3rem 0.75rem;
+  text-transform: capitalize;
+}
+
+.time {
+  margin-top: 2rem;
+}
+
+@media (min-width: 600px) {
+  .linha-form {
+    flex-direction: row;
+  }
+
+  .linha-form input {
+    flex: 1;
+  }
+
+  .card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .grade {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .grade {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* o display: flex do .card venceria o atributo hidden (erro da aula 15) */
+.card[hidden] {
+  display: none;
+}

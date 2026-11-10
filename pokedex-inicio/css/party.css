@@ -1,0 +1,122 @@
+/* Pokédex, aula 22: party, Professor Carvalho e janela de troca
+   Coloque este arquivo em css/ e ligue no index.html, depois do style.css */
+   .acoes-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .party,
+  .laboratorio {
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: var(--espaco);
+    margin-bottom: var(--espaco);
+  }
+  
+  .party h2,
+  .laboratorio h2 {
+    margin-top: 0;
+  }
+  
+  .texto-suave {
+    color: var(--cor-texto-suave);
+    margin: 0;
+  }
+  
+  /* os 6 espaços da party */
+  .slots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .slots li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .slots img {
+    width: 72px;
+    height: 72px;
+  }
+  
+  .slots button {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+  }
+  
+  .slots .vazio {
+    border-style: dashed;
+    color: var(--cor-texto-suave);
+    justify-content: center;
+    min-height: 9rem;
+  }
+  
+  /* os pokémon com o Professor Carvalho */
+  #carvalho {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #carvalho li {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.15rem 0.75rem 0.15rem 0.25rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 999px;
+    text-transform: capitalize;
+  }
+  
+  #carvalho img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* a janela da troca */
+  .dialogo {
+    color: var(--cor-texto);
+    width: min(560px, calc(100% - 2rem));
+    border: none;
+    border-radius: var(--raio);
+    padding: var(--espaco);
+  }
+  
+  .dialogo h2 {
+    margin-top: 0;
+  }
+  
+  .dialogo::backdrop {
+    background: rgba(19, 32, 45, 0.6);
+  }
+  
+  #cancelar-captura {
+    width: 100%;
+    margin-top: var(--espaco);
+  }
+  
+  @media (min-width: 600px) {
+    .slots {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .party .slots {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Pokédex</h1>
+    <p>Dados da PokeAPI (pokeapi.co)</p>
+  </header>
+
+  <main class="conteudo">
+    <!-- módulo 2: busca -->
+    <form id="form-busca" class="formulario">
+      <label for="busca">Nome ou número</label>
+      <div class="linha-form">
+        <input type="text" id="busca" placeholder="Ex.: pikachu ou 25" autocomplete="off">
+        <button type="submit" id="botao-buscar">Buscar</button>
+      </div>
+    </form>
+
+    <p id="mensagem" aria-live="polite"></p>
+    <section class="party">
+      <h2 id="titulo-party">"Minha party (0/6)"</h2>
+      <ul id="party" class="slots"></ul>
+    </section>
+    <section class="laboratorio">
+      <h2 id="titulo-carvalho">Com Professor Carvalho (0/6)</h2>
+      <p id="carvalho-vazio" class="texto-suave">Nenhum pókemon enviado ainda.</p>
+      <ul id="carvalho" class="slots"></ul>
+    </section>
+    <!-- 4.1: favoritos guardados no localStorage -->
+    <section id="favoritos" class="favoritos" hidden>
+      <h2>Favoritos</h2>
+      <div id="lista-favoritos" class="chips"></div>
+    </section>
+
+    <!-- módulos 1 e 2: o card do pokémon -->
+    <article id="card" class="card" hidden>
+      <img id="card-imagem" src="" alt="" width="240" height="240">
+      <div class="card-info">
+        <p id="card-numero" class="numero"></p>
+        <h2 id="card-nome"></h2>
+        <div id="card-tipos" class="tipos"></div>
+        <p id="card-medidas"></p>
+        <ul id="card-status" class="status"></ul>
+        <button type="button" id="botao-capturar">Capturar</button>
+        <button type="button" id="botao-favorito" class="botao-secundario">Favoritar</button>
+      </div>
+    </article>
+
+    <!-- módulo 3: lista com paginação -->
+    <section class="lista-pokemon">
+      <h2>Todos os pokémon</h2>
+      <ul id="lista" class="grade"></ul>
+      <div class="paginacao">
+        <button type="button" id="anterior" class="botao-secundario">Anterior</button>
+        <p id="pagina"></p>
+        <button type="button" id="proxima" class="botao-secundario">Próxima</button>
+      </div>
+    </section>
+
+    <!-- 4.2: três pedidos ao mesmo tempo -->
+    <section class="time">
+      <h2>Time aleatório</h2>
+      <button type="button" id="sortear">Sortear time</button>
+      <ul id="time" class="grade"></ul>
+    </section>
+  </main>
+
+  <script src="js/pokedex.js"></script>
+</body>
+</html>
